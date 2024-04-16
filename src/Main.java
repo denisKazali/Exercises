@@ -32,8 +32,29 @@ public class Main {
         list.deleteLastNode(head);
         list.print(head);
 */
+        LinkedStack<Integer> stack = new LinkedStack<>();
+        stack.push(1);
+        System.out.println(stack.peek());
+        stack.push(2);
+        System.out.println(stack.peek());
+        stack.push(3);
+        System.out.println(stack.peek());
+        stack.push(4);
+        System.out.println(stack.peek());
+        stack.push(5);
+        System.out.println(stack.peek());
+        stack.push(6);
+        System.out.println(stack.peek());
 
+        System.out.println("Printing the stack with .printStack() function:");
 
+        stack.printStack();
+
+        System.out.println("Printing the stack with .pop() function:");
+
+        while(stack.hasNext()){
+            System.out.println("Pop: " + stack.pop());
+        }
 
 
     }
