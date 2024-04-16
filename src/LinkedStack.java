@@ -20,27 +20,55 @@ public class LinkedStack<T> {
         if(topNode.data != null) {
             T data = topNode.data;
             this.topNode = this.topNode.next;
+            if(!this.hasNext()){
+                this.topNode = null;
+            }
             return data;
         }else{
             throw new EmptyStackException();
         }
     }
-
     public T peek(){
-        return topNode.data;
+        if(this.isEmpty()){
+            return null;
+        }else {
+            return topNode.data;
+        }
     }
     boolean isEmpty(){
-        return topNode == null;
+        return this.topNode == null;
     }
     boolean hasNext(){
-        return topNode.next != null;
+        if(this.topNode == null){
+            return false;
+        }else{
+            return this.topNode.next != null;
+        }
+    }
+    public void printStack(){
+        if(this.isEmpty()){
+            throw  new EmptyStackException();
+        }else {
+            Node<T> tempNode = this.topNode;
+            do {
+                System.out.println(tempNode.data);
+                tempNode = tempNode.next;
+            } while (tempNode.next != null);
+        }
+    }
+    public int length(){
+        if(this.isEmpty()){
+            return 0;
+        }else {
+            int len = 0;
+            Node<T> currentNode = this.topNode;
+            while (currentNode.next != null) {
+                len++;
+                currentNode = currentNode.next;
+            }
+
+            return len;
+        }
     }
 
-    public void printStack(){
-        Node<T> tempNode = this.topNode;
-        do{
-            System.out.println(tempNode.data);
-            tempNode = tempNode.next;
-        }while(tempNode.next != null);
-    }
 }
