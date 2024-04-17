@@ -1,8 +1,10 @@
-import java.util.Optional;
+
 
 public class Main {
     public static void main(String[] args) {
         /*
+        //Linked List:
+
         linkedListt<Integer> list = new linkedListt<>();
         list.addItemAtStart(1);
         list.addItemAtEnd(3);
@@ -31,7 +33,9 @@ public class Main {
         System.out.println("Deleting Last Item");
         list.deleteLastNode(head);
         list.print(head);
-*/
+
+        //Linked Stack:
+
         LinkedStack<Integer> stack = new LinkedStack<>();
         stack.push(1);
         System.out.println("Pushed: " + stack.peek());
@@ -61,6 +65,31 @@ public class Main {
         System.out.println("Stack Length: " + stack.length());
         System.out.println("Is the Stack empty: " + stack.isEmpty());
         System.out.println("Peek: " + stack.peek());
+        */
+        //Linked Queue:
+
+        LinkedQueue<Integer> queue = new LinkedQueue<>();
+        queue.offer(1);
+        queue.offer(2);
+        queue.offer(3);
+        queue.offer(4);
+        queue.offer(5);
+        queue.offer(6);
+
+        System.out.println("First in line: " + queue.peek());
+        System.out.println("Poll: " + queue.poll());
+        System.out.println("First in line: " + queue.peek());
+        System.out.println("Poll: " + queue.poll());
+        System.out.println("First in line: " + queue.peek());
+        System.out.println("Poll: " + queue.poll());
+        System.out.println("First in line: " + queue.peek());
+        System.out.println("Poll: " + queue.poll());
+        System.out.println("First in line: " + queue.peek());
+        System.out.println("Poll: " + queue.poll());
+        System.out.println("First in line: " + queue.peek());
+        System.out.println("Poll: " + queue.poll());
+        System.out.println("First in line: " + queue.peek());
+        System.out.println("Poll: " + queue.poll());
 
 
     }
